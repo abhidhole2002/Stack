@@ -66,11 +66,22 @@ class stack
         return arr[top];
     }
 
-    int middle()
+    void removeMiddle()
     {
-        int mid = arr[top/2];
-        return mid;
+        if (top == -1)
+        {
+            cout << "stack is empty" << endl;
+            return;
+        }
 
+        int mid = top / 2;
+        int removed = arr[mid];
+        for (int i = mid; i < top; i++)
+        {
+            arr[i] = arr[i + 1];
+        }
+        top--;
+        cout<<"MIIDLE OF STACK = "<<removed<<endl;
     }
 
 };
@@ -97,11 +108,17 @@ int main()
         one.push(arr[i]);
     }
 
-    cout<<" STACK = ";
+    cout<<"STACK = ";
+    one.print();
+    cout<<endl;
+
+    one.removeMiddle();
+    cout<<endl<<"AFTER REMOVING MIDDLE = ";
     one.print();
 
     cout<<endl<<"TOP OF STACK = "<<one.gettop()<<endl;
-    cout<<endl<<"MIDDLE OF STACK IS "<<one.middle()<<endl;
+    //cout<<endl<<"MIDDLE OF STACK IS "<<one.middle()<<endl;
+
 
     delete[] arr;
  
