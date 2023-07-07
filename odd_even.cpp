@@ -51,7 +51,7 @@ int main()
 
     stack<int> two = one;
 
-    cout<<"MAIN STACK = ";
+    cout<<"ORIGINAL STACK = ";
     while(!one.empty())
     {
         cout<<one.top()<<" ";
